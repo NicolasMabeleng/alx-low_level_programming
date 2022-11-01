@@ -1,18 +1,18 @@
 #include "main"
 /**
  * _memset -fill a block of memory with a specifc value
- * @s: pointer
- * @b: hexadecimal number
- * @n: number of bytes
- * Return: pointer
+ * @s: pointer to put the constant
+ * @b: constant
+ * @n: max bytes to use
+ * Return: s
  */
 char *_memset(char *s, char b, unsigned int n)
 {
-	unsigned char *u = (unsigned char *) s;
+	unsigned int i;
 
-	while (n-- > 0x00)
+	for (i = 0; n > 0; i++, n--)
 	{
-		*u++ = b;
+		s[i] = b;
 	}
 	return (s);
 }
