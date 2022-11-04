@@ -1,18 +1,20 @@
 #include "main"
 /**
  * _memset -fill a block of memory with a specifc value
- * @s: pointer to put the constant
- * @b: constant
+ * @s: pointer to the memory area to be filled
+ * @c: Character to fill the memory area with
  * @n: max bytes to use
- * Return: s
+ * Return: A pointer to the filled memory area @s
  */
-char *_memset(char *s, char b, unsigned int n)
+
+void *_memset(void *s, int c, size_t n)
 {
 	unsigned int i;
+	unsigned char *m = s, value = c;
 
-	for (i = 0; n > 0; i++, n--)
+	for (i = 0; i < n; i++)
 	{
-		s[i] = b;
+		m[i] = value;
 	}
-	return (s);
+	return (m);
 }
